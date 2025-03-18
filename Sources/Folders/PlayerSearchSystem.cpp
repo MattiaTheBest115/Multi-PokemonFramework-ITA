@@ -497,7 +497,7 @@ namespace PSS {
 
         void History(MenuEntry *entry) {
             static const u32 address = Helpers::GetVersion(0x8C84C7C, 0x8C8D448);
-            static const vector<string> options = {language("Battle", "Combat", "Battaglia"), language("Trade", "Echange", "Scambio"), language("O-Power", "O-Aura", "Poteri O"), "Global Trade Station", language("Battle Spot", "Coin combats", "Punto Lotta"), language("Wonder Trade", "Echange miracle", "Scambio prodigioso")};
+            static const vector<string> options = {language("Battle", "Combat", "Lotta"), language("Trade", "Echange", "Scambio"), language("O-Power", "O-Aura", "Poteri O"), "Global Trade Station", language("Battle Spot", "Coin combats", "Punto Lotta"), language("Wonder Trade", "Echange miracle", "Scambio prodigioso")};
             KeyboardPlus keyboard;
 
             if (KB<u8>(language("Index:", "Indexe:", "Indice"), true, false, 1, historyIndex, 0, 1, 6, Callback8)) {

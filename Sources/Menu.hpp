@@ -54,10 +54,10 @@ void InitMenu(PluginMenu &menu) {
     *pss += new MenuEntry(language("Bypass Gift & Centre Icon", "Ignorer l'icône de cadeau et de centre", "Ignora le immagini Regalo e Centro Pokémon"), PSS::BypassHackedIcons);
     menu += (group == Group::XY || group == Group::ORAS ? pss : plaza);
 
-    MenuFolder *battle = new MenuFolder(language("Battle", "Combat", "Battaglia"));
+    MenuFolder *battle = new MenuFolder(language("Battle", "Combat", "Lotta"));
     MenuFolder *primary = new MenuFolder(language("Primary", "Principal", "Primario"));
 
-    *primary += new MenuFolder(language("Active", "En combat", "In battaglia"), note + language("must be in a battle to use.", "doit être en combat pour être utilisé.", "devi essere in battaglia per utilizzare questi trucchi."), vector<MenuEntry*>({
+    *primary += new MenuFolder(language("Active", "En combat", "In Lotta"), note + language("must be in a battle to use.", "doit être en combat pour être utilisé.", "devi essere in Lotta per utilizzare questi trucchi."), vector<MenuEntry*>({
         new MenuEntry(language("Slot: ", "Emplacement: ", "Slot: ") << Color::Gray << "0", nullptr, Battle::Universal::SlotKB),
         new MenuEntry(language("Condition", "Condition", "Problemi di stato"), nullptr, Battle::Universal::Condition),
         new MenuEntry(language("Statistics", "Statistiques", "Statistiche"), Battle::Universal::Statistics, Battle::Universal::StatisticsKB),
@@ -68,7 +68,7 @@ void InitMenu(PluginMenu &menu) {
     }));
 
     *primary += EntryWithHotkey(new MenuEntry(language("Poké View", "Stats Pokémon", "Informazioni Pokémon avversario"), nullptr, Battle::Universal::PokeView, note + language("press the following hotkey(s) below to see the other information. Be aware that this is experiemental for now.", "appuyez sur la (les) touche(s) de raccourci ci-dessous pour voir les autres informations. Notez que ceci est expérimental pour le moment.", "premi il tasto di scelta rapida per visualizzare le altre informazioni. Tieni presente che per il momento si tratta di una funzione sperimentale.")), {Key::X, ""});
-    *primary += EntryWithHotkey(new MenuEntry(language("Access Bag", "Accéder au sac", "Accedi alla borsa"), Battle::Universal::AccessBag, note + language("hold the hotkey(s) below while pressing on an action when in a battle.", "maintenez la (les) touche(s) de raccourci ci-dessous tout en appuyant sur une action lorsque vous êtes en combat.", "tieni premuto il tasto di scelta rapida mentre clicchi un bottone qualsiasi nel menu battaglia.")), {Key::R, ""});
+    *primary += EntryWithHotkey(new MenuEntry(language("Access Bag", "Accéder au sac", "Accedi alla borsa"), Battle::Universal::AccessBag, note + language("hold the hotkey(s) below while pressing on an action when in a battle.", "maintenez la (les) touche(s) de raccourci ci-dessous tout en appuyant sur une action lorsque vous êtes en combat.", "tieni premuto il tasto di scelta rapida mentre clicchi un bottone qualsiasi nel menu Lotta.")), {Key::R, ""});
 
     if (group == Group::XY || group == Group::ORAS)
         *primary += new MenuEntry(language("Bypass 1 Mega Restrict", "Débloquer 1 restriction Méga", "Rimuovi restrizione Megaevoluzione"), Battle::Gen6::Bypass1MegaRestrict);
@@ -77,7 +77,7 @@ void InitMenu(PluginMenu &menu) {
         *primary += new MenuEntry(language("Always Critical Hit", "Toujours un coup critique", "Sempre Brutto colpo"), Battle::Gen7::AlwaysCriticalHit);
         *primary += new MenuEntry(language("Bypass 1 Mega Restrict.", "Débloquer 1 restriction Méga", "Rimuovi restrizione Megaevoluzione"), Battle::Gen7::Bypass1MegaRestrict);
         *primary += new MenuEntry(language("Infinite Z-Moves", "Z-Moves infinis", "Mossa Z infinite"), Battle::Gen7::InfiniteZMoves);
-        *primary += EntryWithHotkey(new MenuEntry(language("Z-Moves w/o Crystal", "Z-Moves sans cristal", "Mosse Z senza Cristalli Z"), Battle::Gen7::ZMovesWithoutCrystal, note + language("activate before intiating a battle! When in battle, hold the hotkey(s) below while pressing on an action when in a battle.", "activez avant d'initier un combat ! En combat, maintenez la (les) touche(s) de raccourci ci-dessous tout en appuyant sur une action lorsque vous êtes en combat.", "attivare prima di iniziare una battaglia. Quando si è in battaglia, tieni premuto il tasto di scelta rapida sotto riportato mentre clicchi il tasto Lotta")), {Key::L, ""});
+        *primary += EntryWithHotkey(new MenuEntry(language("Z-Moves w/o Crystal", "Z-Moves sans cristal", "Mosse Z senza Cristalli Z"), Battle::Gen7::ZMovesWithoutCrystal, note + language("activate before intiating a battle! When in battle, hold the hotkey(s) below while pressing on an action when in a battle.", "activez avant d'initier un combat ! En combat, maintenez la (les) touche(s) de raccourci ci-dessous tout en appuyant sur une action lorsque vous êtes en combat.", "attivare prima di iniziare una Lotta. Quando si è in Lotta, tieni premuto il tasto di scelta rapida sotto riportato mentre clicchi il tasto Lotta")), {Key::L, ""});
     }
 
     if (group == Group::USUM)
@@ -198,7 +198,7 @@ void InitMenu(PluginMenu &menu) {
         new MenuEntry(language("Keep Original Pokémon", "Garder le Pokémon original", "Conservare il Pokémon originale"), Computer::KeepOriginalPokemon, Computer::KeepOriginalPokemonKB, note + language("the Pokémon will not be affected if moved, edited or replaced, it will still be there.", "le Pokémon ne sera pas affecté s'il est déplacé, édité ou remplacé, il restera toujours là.", "il Pokémon non sarà influenzato se viene spostato, modificato o sostituito, sarà ancora lì."))
     }));
 
-    *computer += new MenuEntry(language("PC Anywhere", "PC n'importe où", "Apri il PC ovunque"), Helpers::ChooseEntry(Computer::Gen6::PCAnywhere, Computer::Gen7::PCAnywhere), note + (group == Group::XY || group == Group::ORAS ? language("tap the settings icon on the bottom screen.", "appuyez sur l'icône des paramètres sur l'écran du bas.", "tocca l'icona Impostazione nello schermo inferiore.") : language("tap the settings icon from the in game menu screen.", "appuyez sur l'icône des paramètres à partir de l'écran de menu du jeu en cours.", "tocca l'icona Impostazioni nella schermata del menu di gioco.")));
+    *computer += new MenuEntry(language("PC Anywhere", "PC n'importe où", "Apri il PC ovunque"), Helpers::ChooseEntry(Computer::Gen6::PCAnywhere, Computer::Gen7::PCAnywhere), note + (group == Group::XY || group == Group::ORAS ? language("tap the settings icon on the bottom screen.", "appuyez sur l'icône des paramètres sur l'écran du bas.", "tocca l'icona Impostazione nello schermo inferiore.") : language("tap the settings icon from the in game menu screen.", "appuyez sur l'icône des paramètres à partir de l'écran de menu du jeu en cours.", "tocca l'icona delle Impostazioni nella schermata del menu di gioco.")));
     *computer += new MenuEntry(language("Unlock Every Box", "Débloquer toutes les boîtes", "Sblocca tutti i Box"), nullptr, Computer::UnlockEveryBox);
     menu += computer;
 

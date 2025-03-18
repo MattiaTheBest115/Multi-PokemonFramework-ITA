@@ -53,7 +53,7 @@ CFLAGS   := -Wall -Werror -Wno-psabi -mword-relocations \
             $(BUILD_CFLAGS) $(G)
 
 CFLAGS   += $(INCLUDE) -D__3DS__ $(DEFINES)
-CXXFLAGS := $(CFLAGS) -fno-rtti -fno-exceptions -std=gnu++11
+CXXFLAGS := $(CFLAGS) -fno-rtti -fno-exceptions -std=gnu++11 -Wno-overloaded-virtual
 ASFLAGS  := $(G) $(ARCH) $(INCLUDE) -Os -Wl,$(WL)--gc-sections
 
 #---------------------------------------------------------------------------------
